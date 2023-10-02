@@ -8,6 +8,7 @@ import google.cloud.logging
 from google.cloud import storage 
 from google.cloud import bigquery
 import json
+import config as cfg
 
 logging.basicConfig(format='%(asctime)s %(levelname)s:%(message)s', level=logging.INFO, datefmt='%I:%M:%S')
 
@@ -117,4 +118,4 @@ def convert_kit_etl(event, context):
         
 if __name__ == "__main__":
     logging.info(f"Beginning execution for {today}...")
-    main("","")
+    convert_kit_etl("","")
