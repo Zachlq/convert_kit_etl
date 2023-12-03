@@ -29,7 +29,7 @@ jobs:
         uses: google-github-actions/deploy-cloud-functions@main
         with: 
           name: convert_kit_etl
-          runtime: python37
+          runtime: python38
           project_id: ornate-reef-332816
           event_trigger_type: providers/cloud.pubsub/eventTypes/topic.publish
           event_trigger_resource: projects/ornate-reef-332816/topics/convert_kit_etl
