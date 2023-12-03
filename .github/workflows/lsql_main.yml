@@ -1,0 +1,38 @@
+name: learning_sql_ck_subs
+
+on:
+  
+  workflow_dispatch:
+  
+  push: 
+    branches: [ main ]
+    paths:
+    - "learning_sql_ck_subs**"
+    
+jobs:
+
+  build:
+  
+    runs-on: ubuntu-latest
+    
+    steps:
+    
+      - uses: actions/checkout@v2
+      
+      - name: auth
+        uses: google-github-actions/auth@v1
+        with: 
+          credentials_json: ${{ secrets.GCP_SECRET }}
+          
+    
+      - name: Deploy
+        uses: google-github-actions/deploy-cloud-functions@main
+        with: 
+          name: convert_kit_etl
+          runtime: python38
+          project_id: ornate-reef-332816
+          event_trigger_type: providers/cloud.pubsub/eventTypes/topic.publish
+          event_trigger_resource: projects/ornate-reef-332816/topics/learning_sql_ck_subs
+          source_dir: ./learning_sql_ck_subs/
+          timeout: 540
+          memory_mb: 1024
