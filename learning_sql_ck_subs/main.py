@@ -17,7 +17,7 @@ bq_client = bigquery.Client()
 
 bucket = storage.Client().get_bucket("convert_kit")
 
-blob = bucket.blob(cfg.lsql_ck_creds)
+blob = bucket.blob(cfg.lsql_creds)
 KEY = blob.download_as_string()
 KEY = json.loads(KEY)
 
