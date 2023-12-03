@@ -28,7 +28,7 @@ jobs:
       - name: Deploy
         uses: google-github-actions/deploy-cloud-functions@main
         with: 
-          name: convert_kit_etl
+          name: learning_sql_ck_subs
           runtime: python38
           project_id: ornate-reef-332816
           event_trigger_type: providers/cloud.pubsub/eventTypes/topic.publish
