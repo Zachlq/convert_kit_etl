@@ -29,7 +29,7 @@ jobs:
         uses: google-github-actions/deploy-cloud-functions@main
         with: 
           name: learning_sql_ck_subs
-          runtime: python38
+          runtime: python37
           project_id: ornate-reef-332816
           event_trigger_type: providers/cloud.pubsub/eventTypes/topic.publish
           event_trigger_resource: projects/ornate-reef-332816/topics/learning_sql_ck_subs
