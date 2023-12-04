@@ -71,9 +71,9 @@ def learning_sql_ck_subs(event, context):
 
     total_sub_df = pd.DataFrame(data, index=[0])
     
-    logging.info(f"Uploading to {cfg.dataset}.{cfg.lsql_table}...")
+    logging.info(f"Uploading to {cfg.dataset}.{cfg.lsql_ck_table}...")
 
-    upload_to_bq(total_sub_df, cfg.dataset, cfg.lsql_table, cfg.total_subs_schema)
+    upload_to_bq(total_sub_df, cfg.dataset, cfg.lsql_ck_table, cfg.total_subs_schema)
 
     logging.info(f"lsql_total_subs updated as of {today}")
 
