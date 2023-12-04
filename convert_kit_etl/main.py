@@ -10,6 +10,8 @@ from google.cloud import bigquery
 import json
 import config as cfg
 
+# Initialize logging
+
 logging.basicConfig(format='%(asctime)s %(levelname)s:%(message)s', level=logging.INFO, datefmt='%I:%M:%S')
 
 logging_client = google.cloud.logging.Client()
